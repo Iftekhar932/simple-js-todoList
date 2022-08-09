@@ -65,7 +65,6 @@ function displayAlert(text, action) {
 // clear items
 function clearItems() {
   const items = document.querySelectorAll(".grocery-item");
-  console.log(items);
   if (items.length > 0) {
     items.forEach(function (item) {
       list.removeChild(item);
@@ -116,16 +115,13 @@ function setBackToDefault() {
 function addToLocalStorage(id, value) {
   const grocery = { id, value };
   let items = getLocalStorage();
-  console.log(items);
   items.push(grocery);
   localStorage.setItem("list", JSON.stringify(items));
 }
 
 function removeFromLocalStorage(id) {
   let items = getLocalStorage();
-  console.log(items);
   items = items.filter(function (item) {
-    console.log(item);
     if (item.id !== id) {
       return item;
     }
@@ -155,13 +151,7 @@ function getLocalStorage() {
 // getItem
 // removeItem
 // save as strings
-/* localStorage.setItem(
-  "orange",
-  JSON.stringify(["if", "jodi", "is", "hoy"])
-);
-const oranges = JSON.parse(localStorage.getItem("orange"));
-console.log(oranges);
-localStorage.removeItem("orange"); */
+
 
 // ****** SETUP ITEMS **********
 function setupItems() {
